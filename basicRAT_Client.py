@@ -6,11 +6,10 @@
 #
 
 import socket, sys, time, datetime
-
-# from core import *
+from core import *
 
 # Change these to suit your needs
-HOST = 'localhost'
+HOST = '192.168.80.130'
 PORT = 1337
 
 # Seconds to wait before client will attempt to reconnect

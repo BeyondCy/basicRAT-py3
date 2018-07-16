@@ -1,6 +1,6 @@
 # basicRAT
 
-This is a cross-platform Python 2.x Remote Access Trojan (RAT), basicRAT was created to maintain a clean design full-featured Python RAT. Currently a work in progress and still being actively hacked on.
+This is a cross-platform Python 3.4+ Remote Access Trojan (RAT), basicRAT was created to maintain a clean design full-featured Python RAT. Currently a work in progress and still being actively hacked on.
 
 **Disclaimer: This RAT is for research purposes only, and should only be used on authorized systems. Accessing a computer system or network without authorization or explicit permission is illegal.**
 
@@ -14,6 +14,11 @@ This is a cross-platform Python 2.x Remote Access Trojan (RAT), basicRAT was cre
 * Self-destruct
 * Primitive port scanning
 * Client reconnect
+
+## Requirements
+python3-pip
+gnureadline
+PyCryptodome
 
 ## Usage
 ```
@@ -102,6 +107,7 @@ On Windows you will need Python 2.x, PyInstaller, pycrypto, pywin32, and pefile.
 ## Authors
 * Austin Jackson [@vesche](https://github.com/vesche)
 * Skyler Curtis [@deadPix3l](https://github.com/deadPix3l)
+* Xifeng2009 [@Xifeng2009](https://github.com/Xifeng2009)
 
 ## Thanks
 * [@bozhu](https://github.com/bozhu), AES-GCM Python implementation.

